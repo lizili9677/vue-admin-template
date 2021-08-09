@@ -12,19 +12,20 @@ import App from './App'
 import store from './store'
 import router from './router'
 
+import api from '@/api'
 import '@/icons' // icon
 import '@/permission' // permission control
 
 // set ElementUI lang to EN
 Vue.use(ElementUI, { locale })
+Vue.use(api)
 // 如果想要中文版 element-ui，按如下方式声明
 // Vue.use(ElementUI)
 
 Vue.config.productionTip = false
 
 new Vue({
-  el: '#app',
   router,
   store,
   render: h => h(App)
-})
+}).$mount('#app')
